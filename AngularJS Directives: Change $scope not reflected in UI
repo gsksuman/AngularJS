@@ -1,0 +1,5 @@
+Event handlers are called "outside" Angular, so although your $scope properties will be updated, the view will not update because Angular doesn't know about these changes.
+
+Call $scope.$apply() at the bottom of your event handler. This will cause a digest cycle to run, and Angular will notice the changes you made to the $scope (because of the $watches that Angular set up due to using {{ ... }} in your HTML) and update the view.
+
+use $scope.$apply(); after value change. 
