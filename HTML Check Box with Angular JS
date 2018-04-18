@@ -1,0 +1,4 @@
+1) You should call your method on ng-change of checkbox, to get correct changed value. Also add ng-model to get two way binding enable your checkbox value.
+
+<input ng-model="myCheckbox" type="checkbox" name="xxx" 
+       ng-change='someFunction(myCheckbox)'">
