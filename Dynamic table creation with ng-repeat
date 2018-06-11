@@ -1,0 +1,39 @@
+//Angular Code
+angular.module('myApp', [])
+  .controller('myController', function($scope) {
+    $scope.myArray = [
+      { "CustomerName": "FORD", "Australia": 0, "China": 2, "India": 0, "South Korea": 0 },
+      { "CustomerName": "ICICI PRUDENTIAL", "Australia": 0, "China": 0, "India": 5, "South Korea": 0 },
+      { "CustomerName": "Kimberly Clark", "Australia": 0, "China": 0, "India": 0, "South Korea": 1 },
+      { "CustomerName": "McDonalds", "Australia": 1, "China": 0, "India": 0, "South Korea": 0 },
+      { "CustomerName": "Novartis", "Australia": 1, "China": 0, "India": 0, "South Korea": 0 },
+      { "CustomerName": "Origin Energy", "Australia": 3, "China": 0, "India": 0, "South Korea": 0 }
+    ];
+  });
+
+angular.element(document).ready(function() {
+  angular.bootstrap(document, ['myApp']);
+});
+
+//Page
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<table ng-controller="myController" border="1">
+  <tr>
+    <th ng-repeat="(key, val) in myArray[0]">{{ key }}</th>
+  </tr>
+  <tr ng-repeat="row in myArray">
+    <td ng-repeat="column in row">
+      {{ column }}
+    </td>
+  </tr>
+</table>
+
+Output: 
+
+CustomerName	   Australia	China	India	South Korea
+FORD	             0	       2	   0	   0
+ICICI PRUDENTIAL	 0	       0	   5	   0
+Kimberly Clark	   0	       0	   0	   1
+McDonalds	         1	       0	   0	   0
+Novartis	         1	       0	   0	   0
+Origin Energy	     3	       0	   0	   0
